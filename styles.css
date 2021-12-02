@@ -1,0 +1,21 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: auto;
+    border: black 2px solid;
+}
+
+input {
+    display: block;
+}
+
+form button {
+    display: block;
+}
+
+form {
+    height: 300px;
+    width: 200px;
+    background-color: grey;
+    border-radius: 10px;
+}

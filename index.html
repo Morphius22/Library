@@ -15,6 +15,29 @@
         <p>290 Pages</p>
         <p>Yes</p>
     </div>
+
     <button>Add Book</button>
+
+    <div class = "popupForm">
+        <form action="">
+            <h1>Add a Book!</h1>
+            <label for="title">Book Title</label>
+            <input type="text" name = "title" placeholder = "Enter Book Title" required>
+
+            <label for="author">Author</label>
+            <input type="text" name = "author" placeholder = "Enter Book Author" required>
+
+            <label for="pages">Pages</label>
+            <input type="text" name = "pages" placeholder = "Enter Book Page Count" required>
+
+            <label for="beenRead">Have You Read It?</label>
+            <select name = "beenRead">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 </body>
 </html>
