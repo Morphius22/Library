@@ -9,34 +9,41 @@
     <script src="/Users/eric/Desktop/coding-stuff/websites/odin-project/Library/logic.js" defer></script>
 </head>
 <body>
-    <div class = "container">
-        <p>Fight Club</p>
-        <p>Chuck</p>
-        <p>290 Pages</p>
-        <p>Yes</p>
+    <div>
+        <h1>Library</h1>
+        <button id = "addbook">Add Book</button>
     </div>
 
-    <button id = "addbook">Add Book</button>
+    <div class = "container">
+        <div class = "book_row">
+            <p>Siddhartha</p>
+            <p>Herman Hesse</p>
+            <p>190 Pages</p>
+            <p>Yes</p>
+            <button>Remove</button>
+            <button>I Read It!</button>
+        </div>
+    </div>
 
     <div class = "form" id = "form1">
         <form action="">
             <h1>Add a Book!</h1>
             <label for="title">Book Title</label>
-            <input type="text" name = "title" placeholder = "Enter Book Title" required>
+            <input type="text" id = "title" name = "title" placeholder = "Enter Book Title" required>
 
             <label for="author">Author</label>
-            <input type="text" name = "author" placeholder = "Enter Book Author" required>
+            <input type="text" id = "author" name = "author" placeholder = "Enter Book Author" required>
 
             <label for="pages">Pages</label>
-            <input type="text" name = "pages" placeholder = "Enter Book Page Count" required>
+            <input type="text" id = "pages" name = "pages" placeholder = "Enter Book Page Count" required>
 
             <label for="beenRead">Have You Read It?</label>
-            <select name = "beenRead">
+            <select id = "beenRead" name = "beenRead">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
             <button type="submit" class="btn" id = "submitbutton">Submit</button>
-            <button type="button" class="btn cancel">Close</button>
+            <button type="button" class="btn cancel" id = "closebutton">Close</button>
         </form>
     </div>
 </body>

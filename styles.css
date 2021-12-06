@@ -1,8 +1,12 @@
-.container {
+.book_row {
     display: grid;
-    grid-template-columns: repeat(4, 250px);
+    grid-template-columns: repeat(6, 200px);
     grid-template-rows: auto;
-    border: black 2px solid;
+    border-top: grey 2px solid;
+    border-bottom: grey 2px solid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 input {
@@ -24,4 +28,15 @@ form button {
 form {
     display: flex;
     flex-direction: column;
+}
+
+.container button {
+    height: 30px;
+}
+
+#addbook {
+    height: 40px;
+    width: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
 }
