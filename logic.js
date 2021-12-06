@@ -89,7 +89,14 @@ addBookButton.addEventListener('click', displayForm);
 
 //When the submit button is clicked, the addBooktoLibrary function runs
 const submitBookButton = document.querySelector("#submitbutton");
-submitBookButton.addEventListener('click', addBookToLibrary);
+submitBookButton.addEventListener('click', e => {
+    document.querySelectorAll('.bookData').forEach(item => item.remove());
+    addBookToLibrary(e);
+});
+
+
+// const submitBookButton = document.querySelector("#submitbutton");
+// submitBookButton.addEventListener('click', addBookToLibrary);
 
 //When the close button is clicked, the form is hidden
 const closeButton = document.querySelector("#closebutton");
