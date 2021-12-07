@@ -35,40 +35,48 @@ function addBookToLibrary(event) {
 
 //Displays all book objects in the myLibrary array
 function displayBook() {
-    myLibrary.forEach(book => {
+    myLibrary.forEach((book, index) => {
         const container = document.querySelector('.container')
+
         const newRow = document.createElement('div');
         newRow.classList.add('book_row');
+        newRow.setAttribute('data-row', index);
         container.append(newRow)
 
         const newBookTitle = document.createElement('p');
         newBookTitle.textContent = book.title;
         newBookTitle.classList.add('bookData');
+        newBookTitle.setAttribute('data-row', index);
         newRow.appendChild(newBookTitle);
 
         const newBookAuthor = document.createElement('p');
         newBookAuthor.textContent = book.author;
         newBookAuthor.classList.add('bookData');
+        newBookAuthor.setAttribute('data-row', index);
         newRow.appendChild(newBookAuthor);
 
         const newBookPages = document.createElement('p');
         newBookPages.textContent = book.pages;
         newBookPages.classList.add('bookData');
+        newBookPages.setAttribute('data-row', index);
         newRow.appendChild(newBookPages);
 
         const newBookRead = document.createElement('p');
         newBookRead.textContent = book.beenRead;
         newBookRead.classList.add('bookData');
+        newBookRead.setAttribute('data-row', index);
         newRow.appendChild(newBookRead);
 
         const removeBookButton = document.createElement('button');
         removeBookButton.textContent = "Remove"
         removeBookButton.classList.add('bookData');
+        removeBookButton.setAttribute('data-row', index);
         newRow.appendChild(removeBookButton);
 
         const changeBookReadButton = document.createElement('button');
         changeBookReadButton.textContent = "I Read It!"
         changeBookReadButton.classList.add('bookData');
+        changeBookReadButton.setAttribute('data-row', index);
         newRow.appendChild(changeBookReadButton);
     })
 }
@@ -82,6 +90,7 @@ function displayForm () {
 function hideForm () {
     document.getElementById('form1').style.display = 'none';
 }
+
 
 //When add book button is clicked, the form appears
 const addBookButton = document.querySelector("#addbook");
