@@ -1,12 +1,17 @@
-.book_row {
+.bookRow, #gridLabels {
     display: grid;
     grid-template-columns: repeat(6, 200px);
     grid-template-rows: auto;
-    border-top: grey 2px solid;
-    border-bottom: grey 2px solid;
+    border-bottom: rgb(233, 233, 233) 2px solid;
     gap: 10px;
     justify-content: center;
     align-items: center;
+}
+
+#gridLabels {
+    background-color: rgb(233, 233, 233);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 input {
@@ -20,7 +25,8 @@ form button {
 .form {
     height: 300px;
     width: 200px;
-    background-color: grey;
+    margin-top: 2%;
+    padding: 20px 20px;
     border-radius: 10px;
     display: none;
 }
@@ -28,10 +34,23 @@ form button {
 form {
     display: flex;
     flex-direction: column;
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    padding: 10% 10%;
+}
+
+form label {
+    margin-top: 5%;
+}
+
+form button {
+    margin-top: 5%;
 }
 
 .container button {
     height: 30px;
+    width: 125px;
+    justify-self: center;
 }
 
 #addbook {

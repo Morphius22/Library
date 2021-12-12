@@ -33,51 +33,100 @@ function addBookToLibrary(event) {
     hideForm();
 }
 
+function changeRead(index) {
+    readStatus = document.querySelectorAll('bookRow')
+    readStatus.forEach(row => {
+        if (row.dataset.row == index) {
+            row.beenRead = "Yes"
+        } else {
+            row.dataset.row = "No"
+        }
+    });
+};
+
+function consoleData (data) {
+    console.log(data);
+}
+
+function updateDisplay () {
+    document.querySelectorAll('.bookData').forEach(item => item.remove());
+    document.querySelectorAll('.bookRow').forEach(item => item.remove());
+    displayBook();
+}
+
+
 //Displays all book objects in the myLibrary array
 function displayBook() {
     myLibrary.forEach((book, index) => {
         const container = document.querySelector('.container')
 
         const newRow = document.createElement('div');
-        newRow.classList.add('book_row');
+        newRow.classList.add('bookRow');
         newRow.setAttribute('data-row', index);
         container.append(newRow)
 
+        //Adds the title of the book to the grid
         const newBookTitle = document.createElement('p');
         newBookTitle.textContent = book.title;
         newBookTitle.classList.add('bookData');
         newBookTitle.setAttribute('data-row', index);
         newRow.appendChild(newBookTitle);
 
+        //Adds the author of the book to the grid
         const newBookAuthor = document.createElement('p');
         newBookAuthor.textContent = book.author;
         newBookAuthor.classList.add('bookData');
         newBookAuthor.setAttribute('data-row', index);
         newRow.appendChild(newBookAuthor);
 
+        //Adds the page count of the book to the grid
         const newBookPages = document.createElement('p');
         newBookPages.textContent = book.pages;
         newBookPages.classList.add('bookData');
         newBookPages.setAttribute('data-row', index);
         newRow.appendChild(newBookPages);
 
+        //adds if the book has been read to the grid
         const newBookRead = document.createElement('p');
         newBookRead.textContent = book.beenRead;
         newBookRead.classList.add('bookData');
         newBookRead.setAttribute('data-row', index);
         newRow.appendChild(newBookRead);
 
+        //adds a button that removes the book from the grid
         const removeBookButton = document.createElement('button');
         removeBookButton.textContent = "Remove"
-        removeBookButton.classList.add('bookData');
+        removeBookButton.classList.add('bookData','deleteButton');
         removeBookButton.setAttribute('data-row', index);
         newRow.appendChild(removeBookButton);
+        removeBookButton.addEventListener('click', e => {
+            e.preventDefault();
+            myLibrary.splice(e.currentTarget.dataset.row, 1)
+            console.log('this is the mylibrary array:' + myLibrary);
+            console.log('this is the index position:' + e.currentTarget.dataset.row);
+            updateDisplay();
+        })
 
+        //adds a button that changes if a book has been read
         const changeBookReadButton = document.createElement('button');
         changeBookReadButton.textContent = "I Read It!"
-        changeBookReadButton.classList.add('bookData');
+        changeBookReadButton.classList.add('bookData', 'changeButton');
+        changeBookReadButton.id = "changeBookRead"
         changeBookReadButton.setAttribute('data-row', index);
         newRow.appendChild(changeBookReadButton);
+        changeBookReadButton.addEventListener('click', e => {
+            e.preventDefault();
+            myLibrary[e.currentTarget.dataset.row].beenRead = "Yes";
+            updateDisplay();
+        });
+
+        // const changeReadButtons = document.querySelectorAll('.changeButton');
+        // changeReadButtons.forEach(button => button.addEventListener('click', e => {
+        //     e.preventDefault();
+        //     myLibrary[e.currentTarget.dataset.row].beenRead = "Yes";
+        //     updateDisplay();
+        // }))
+
     })
 }
 
@@ -100,12 +149,9 @@ addBookButton.addEventListener('click', displayForm);
 const submitBookButton = document.querySelector("#submitbutton");
 submitBookButton.addEventListener('click', e => {
     document.querySelectorAll('.bookData').forEach(item => item.remove());
+    document.querySelectorAll('.bookRow').forEach(item => item.remove());
     addBookToLibrary(e);
 });
-
-
-// const submitBookButton = document.querySelector("#submitbutton");
-// submitBookButton.addEventListener('click', addBookToLibrary);
 
 //When the close button is clicked, the form is hidden
 const closeButton = document.querySelector("#closebutton");
