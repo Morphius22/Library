@@ -1,2 +1,2 @@
 # Library
-A miniature library 
+A library that stores book info.
