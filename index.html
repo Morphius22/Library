@@ -9,9 +9,31 @@
     <script src="/Users/eric/Desktop/coding-stuff/websites/odin-project/Library/logic.js" defer></script>
 </head>
 <body>
-    <div>
+    <div class = "header">
         <h1>Library</h1>
         <button id = "addbook">Add Book</button>
+    </div>
+
+    <div class = "form" id = "form1">
+        <p id = "info">Type in the books info to add it to the library.</p>
+        <form action="">
+            <label for="title" id = "titleLabel">Book Title</label>
+            <input type="text" id = "title" name = "title" placeholder = "Title" required>
+
+            <label for="author">Author</label>
+            <input type="text" id = "author" name = "author" placeholder = "Author" required>
+
+            <label for="pages">Pages</label>
+            <input type="text" id = "pages" name = "pages" placeholder = "Page Count" required>
+
+            <label for="beenRead">Have You Read It?</label>
+            <select id = "beenRead" name = "beenRead">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <button type="submit" class="btn" id = "submitbutton">Submit</button>
+            <button type="button" class="btn cancel" id = "closebutton">Close</button>
+        </form>
     </div>
 
     <div class = "container">
@@ -23,7 +45,7 @@
         </div>
     </div>
 
-    <div class = "form" id = "form1">
+    <!-- <div class = "form" id = "form1">
         <form action="">
             <h1>Add a Book!</h1>
             <label for="title">Book Title</label>
@@ -43,6 +65,6 @@
             <button type="submit" class="btn" id = "submitbutton">Submit</button>
             <button type="button" class="btn cancel" id = "closebutton">Close</button>
         </form>
-    </div>
+    </div> -->
 </body>
 </html>

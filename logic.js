@@ -133,6 +133,7 @@ function displayBook() {
 //Displays add book form
 function displayForm () {
     document.getElementById('form1').style.display = 'block';
+    document.querySelector('form').style.display = 'flex';
 }
 
 //Hides add book form

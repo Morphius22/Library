@@ -1,61 +1,111 @@
+html {
+    background-color: rgb(244, 244, 244);
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+h1 {
+    display: inline-block;
+    color: white;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(40, 39, 39);
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+#addbook {
+    margin-left: 2%;
+}
+
 .bookRow, #gridLabels {
     display: grid;
     grid-template-columns: repeat(6, 200px);
     grid-template-rows: auto;
-    border-bottom: rgb(233, 233, 233) 2px solid;
+    border-bottom: rgb(40, 39, 39) 2px solid;
     gap: 10px;
-    justify-content: center;
     align-items: center;
+    padding-left: 10px;
 }
 
 #gridLabels {
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(40, 39, 39);
     font-weight: bold;
-    font-size: 20px;
-}
-
-input {
-    display: block;
-}
-
-form button {
-    display: block;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
 .form {
-    height: 300px;
-    width: 200px;
-    margin-top: 2%;
-    padding: 20px 20px;
-    border-radius: 10px;
     display: none;
+    margin: 2% 0%;
+    /* justify-content: center; */
+    align-items: center;
+    width: fit-content;
+    background-color: rgb(40, 39, 39);
+    border-radius: 10px;
+    padding: 20px 10px;
+    color: white;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(233, 233, 233);
+    align-items: center;
+    justify-content: left;
+}
+
+.form label, .form button, #info {
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+#info, #titleLabel {
+    margin-left: 5px;
+}
+
+#info {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.form label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button {
+    font-size: 15px;
+    color: rgb(242, 239, 239);
+    background-color: rgb(113, 113, 216);
+    border: none;
     border-radius: 10px;
-    padding: 10% 10%;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 120px;
+    -webkit-appearance: none;
 }
 
-form label {
-    margin-top: 5%;
-}
-
-form button {
-    margin-top: 5%;
+input, ::placeholder, select, ::after {
+    -webkit-appearance: none;
+    font-size: 15px;
+    color: rgba(242, 239, 239, 0.612);
+    background-color: rgb(113, 113, 216);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 5px;
+    font-weight: bold;
+    width: 120px;
+    text-align: left;
+    justify-self: left;
 }
 
 .container button {
-    height: 30px;
-    width: 125px;
     justify-self: center;
 }
 
 #addbook {
-    height: 40px;
-    width: 100px;
     display: inline-block;
-    margin-bottom: 20px;
 }
